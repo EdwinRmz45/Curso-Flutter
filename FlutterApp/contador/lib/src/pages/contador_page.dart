@@ -30,34 +30,34 @@ class _ContadorPageState extends State<ContadorPage>{
           ],
         )
       ),
-      floatingActionButton: Row(   //Increments
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          FloatingActionButton(
-            
-            backgroundColor: Colors.deepPurple,
-            child: Icon(Icons.add,),
-            onPressed: (){
-              _conteo++;
-              setState(() {
-                
-              });
-            },
-          ),
-          FloatingActionButton(   //Decrements
-            backgroundColor: Colors.deepPurple,
-            child: Icon(Icons.exposure_neg_1,),
-            onPressed: (){
-              _conteo--;
-              setState(() {
-                
-              });
-            },
-          )
-        ],
-        
-      ),
-      
+      floatingActionButton: _crearBotones()
     );
   }
+
+  Widget _crearBotones() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.end,
+      children: <Widget>[
+        SizedBox(width: 30.0),
+        FloatingActionButton( onPressed: _reset, child: Icon(Icons.exposure_zero), backgroundColor: Colors.deepPurple),
+        Expanded(child: SizedBox()),
+        FloatingActionButton( onPressed: _sustraer, child: Icon(Icons.remove), backgroundColor: Colors.deepPurple),
+        SizedBox(width: 10.0,),
+        FloatingActionButton( onPressed: _agregar, child: Icon(Icons.add), backgroundColor: Colors.deepPurple)
+      ],
+    );
+  }
+
+  void _agregar() {
+    setState(() =>_conteo++);
+  }
+
+  void _sustraer() {
+    setState(() =>_conteo--);
+  }
+
+  void _reset() {
+    setState(() =>_conteo = 0);
+  }
+
 }
