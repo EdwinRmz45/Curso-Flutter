@@ -12,7 +12,7 @@ class AvatarPage extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(7.0),
             child: CircleAvatar(
-              backgroundImage: NetworkImage('https://p.kindpng.com/picc/s/563-5634840_cheems-doge-transparent-hd-png-download.png'),
+              backgroundImage: NetworkImage('https://www.redwolf.in/image/cache/catalog/artwork-Images/face-masks/akatsuki-cloud-cotton-face-mask-artwork-128x128.png'),
               radius: 22.0,
             ),
           ),
